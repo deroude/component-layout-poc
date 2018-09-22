@@ -1,13 +1,11 @@
-
+import { reducer as layoutReducer } from './layout/layout.reducers';
+import { LayoutState } from './layout/layout.state';
 import { ActionReducerMap } from '@ngrx/store';
-import { routerReducer } from '@ngrx/router-store';
 
 export interface AppState {
-
-    router: any
+    layout: LayoutState
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-
-    router: routerReducer
+    layout: layoutReducer
 }

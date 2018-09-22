@@ -5,27 +5,23 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { AppRoutingModule } from './app-routing.module';
-
-
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 
 import { reducers } from './redux/reducers';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
-import { RouterEffects } from './redux/router/router.effects';
+import { LayoutItemComponent } from './components/layout-item/layout-item.component';
+import { LayoutEffects } from './redux/layout/layout.effects';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    LayoutItemComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([ RouterEffects]),
+    EffectsModule.forRoot([LayoutEffects]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 5
