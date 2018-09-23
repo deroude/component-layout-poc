@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LayoutItem } from '../../domain/layout-item';
 
 @Component({
   selector: 'layout-item',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout-item.component.scss']
 })
 export class LayoutItemComponent implements OnInit {
+
+  @Input()
+  source:LayoutItem;
 
   constructor() { }
 

@@ -50,7 +50,10 @@ export class AppComponent implements OnInit {
 
   constructor(private store: Store<AppState>) { }
 
+  layout$: Observable<LayoutItem>;
+
   ngOnInit() {
+    this.layout$ = this.store.pipe(select(state => state.layout.layout));
     this.store.dispatch(new SetLayoutAction(layout));
   }
 

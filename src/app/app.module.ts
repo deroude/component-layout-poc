@@ -8,21 +8,25 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 
 import { reducers } from './redux/reducers';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { LayoutItemComponent } from './components/layout-item/layout-item.component';
 import { LayoutEffects } from './redux/layout/layout.effects';
+import { VLayoutComponent } from './components/layout-item/impl/v-layout/v-layout.component';
+import { HLayoutComponent } from './components/layout-item/impl/h-layout/h-layout.component';
+import { FormInputComponent } from './components/layout-item/impl/form-input/form-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutItemComponent
+    LayoutItemComponent,
+    VLayoutComponent,
+    HLayoutComponent,
+    FormInputComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     StoreModule.forRoot(reducers),
-    EffectsModule.forRoot([LayoutEffects]),
-    StoreRouterConnectingModule.forRoot(),
+    // EffectsModule.forRoot([LayoutEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 5
     })
