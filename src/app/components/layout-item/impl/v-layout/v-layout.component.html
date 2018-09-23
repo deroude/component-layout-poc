@@ -1,1 +1,5 @@
-<layout-item *ngFor="let item of source.children" [source]="item"></layout-item>
+<ng-container *ngFor="let item of source.children">
+    <drop-handle before="true" [item]="item" orientation="horizontal"></drop-handle>
+    <layout-item [source]="item"></layout-item>
+</ng-container>
+<drop-handle before="false" [item]="source.children[source.children.length-1]" orientation="horizontal"></drop-handle>

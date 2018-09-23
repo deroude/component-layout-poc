@@ -1,0 +1,12 @@
+.layout-container{
+    position: relative;
+}
+
+.drag-handle {
+    position:absolute;
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-top: 20px solid gray;
+    cursor: move;
+}

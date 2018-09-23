@@ -1,5 +1,7 @@
-<ng-container [ngSwitch] = "source.type">
+
+<div [ngSwitch]="source.type" draggable="true" class="layout-container" (mousedown)="checkHandle($event)" (dragstart)="dragStart($event)" #target>
+  <div class="drag-handle" draggable #handle></div>
   <form-input *ngSwitchCase="'form-input'" [source]="source"></form-input>
   <h-layout *ngSwitchCase="'h-layout'" [source]="source"></h-layout>
   <v-layout *ngSwitchCase="'v-layout'" [source]="source"></v-layout>
-</ng-container>
+</div>

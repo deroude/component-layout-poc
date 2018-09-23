@@ -4,7 +4,7 @@ import { LayoutItem } from '../../../../domain/layout-item';
 @Component({
   selector: 'v-layout',
   templateUrl: './v-layout.component.html',
-  styleUrls: ['./v-layout.component.css']
+  styleUrls: ['./v-layout.component.scss']
 })
 export class VLayoutComponent implements OnInit {
 

@@ -9,11 +9,25 @@ import { LayoutItem } from '../../domain/layout-item';
 export class LayoutItemComponent implements OnInit {
 
   @Input()
-  source:LayoutItem;
+  source: LayoutItem;
+
+  target: any;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  checkHandle(e: any): void {
+    this.target = e.target;
+  }
+
+  dragStart(e: any): void {
+    if(this.target.className==='drag-handle'){
+
+    }else{
+      e.preventDefault();
+    }
   }
 
 }
